@@ -33,40 +33,12 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry the Bird</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry the Bird</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
+                    <tr v-for="(obt ,i) in Obt" :key="i">
+                      <th scope="row">{{ 1 + i }}</th>
+                      <td>{{ obt.Code_Obat }}</td>
+                      <td>{{ obt.Nama_Obat }}</td>
+                      <td>{{ obt.Expired_Date }}</td>
+                      <td>{{ obt.Jumlah }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -76,7 +48,28 @@
 </template>
       
 <script setup>
+const supa = useSupabaseClient()
 
+const Obt = ref([])
+
+const getObat = async () => {
+  const {data,error} = await supa
+  .from('Tbl_Obat')
+  .select('*')
+  .order('id')
+
+  if(!error){
+    Obt.value = data
+  }else{
+    console.log('error')
+  }
+}
+
+onMounted(() => {
+  getObat()
+}
+
+)
 </script>
 
 <style scoped>

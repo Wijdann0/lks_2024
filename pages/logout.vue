@@ -1,16 +1,15 @@
 <template>
-  <div class="container">
-            <h1>Sedang Keluar</h1>
+    <div class="container">
+        <h1>Sedang Keluar</h1>
     </div>
 </template>
-
+  
 <script setup>
-
 const supa = useSupabaseClient()
-
+  
 async function keluar(){
-    const{error} = await supa.auth.signOut()
-    if(!error) navigateTo('/login')
+const{error} = await supa.auth.signOut()
+if(!error) navigateTo('/login')
 }
 
 async function insertLog(){
@@ -27,9 +26,9 @@ async function insertLog(){
 }
 
 onMounted (() => {
-    insertLog()
+insertLog()
 })
-
+  
 </script>
 
 <style>

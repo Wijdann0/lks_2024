@@ -25,7 +25,7 @@
                 <table class="table  border-dark">
                     <thead>
                       <tr>
-                        <th scope="col">id_resep</th>
+                        <th scope="col">#</th>
                         <th scope="col">No Resep</th>
                         <th scope="col">Tgl Resep</th>
                         <th scope="col">Nama Dokter</th>

@@ -8,17 +8,15 @@
         <form @submit.prevent="tambahResep">
             <div class="row justify-content-around pb-4">
                 <div class="col-lg-4">
-                    <input v-model="resep.Tgl_Resep" class="form-control" type="date" placeholder="Tanggal Resep" aria-label="default input example">
+                    <input v-model="resep.No_Resep" class="form-control" type="text" placeholder="No Resep" aria-label="default input example">
                 </div>
 
                 <div class="col-lg-4">
-                    <input v-model="resep.No_Resep" class="form-control" type="text" placeholder="No Resep" aria-label="default input example">
+                    <input v-model="resep.Nama_Dokter" class="form-control" type="text" placeholder="Nama Dokter" aria-label="default input example">
                 </div>
             </div>
             <div class="row justify-content-around pb-4">
-                <div class="col-lg-4">
-                    <input v-model="resep.Nama_Dokter" class="form-control" type="text" placeholder="Nama Dokter" aria-label="default input example">
-                </div>
+                
 
                 <div class="col-lg-4">
                     <input v-model="resep.Nama_Pasien" class="form-control" type="text" placeholder="Nama pasien" aria-label="default input example">
@@ -54,7 +52,6 @@
 const supa = useSupabaseClient();
   
   const resep = ref({
-    Tgl_Resep: "",
     No_Resep: "",
     Nama_Dokter: "",
     Nama_Pasien: "",

@@ -67,9 +67,7 @@ const getObat = async () => {
 
 onMounted(() => {
   getObat()
-}
-
-)
+})
 </script>
 
 <style scoped>

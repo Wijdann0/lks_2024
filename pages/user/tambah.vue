@@ -60,7 +60,7 @@ async function tambahUser (){
         password: password.value,
         options:{
             data:{
-                nama: username.value,
+                username: username.value,
                 tipe: tipe.value,
             }
         }

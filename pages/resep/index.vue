@@ -33,40 +33,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                      </tr>
-                      <tr>
-                      <th scope="row">3</th>
-                      <td>Larry the Bird</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
+                      <tr v-for="(rsp , i) in resep" :key="i">
+                        <th scope="row">{{ 1 + i }}</th>
+                        <td>{{ rsp.No_Resep }}</td>
+                        <td>{{ rsp.Tgl_Resep }}</td>
+                        <td>{{ rsp.Nama_Dokter }}</td>
+                        <td>{{ rsp.Obat_Resep}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -75,14 +47,28 @@
         </div>
   </template>
         
-  <script setup>
+<script setup>
+const supa = useSupabaseClient()
+
+const resep = ref([])
+
+const getResep = async () => {
+  const {data,error} = await supa.from('Tbl_Resep').select()
+
+  if(data){
+    resep.value = data
+  }
+}
+
+onMounted(() => {
+  getResep()
+})
+</script>
   
-  </script>
-  
-  <style scoped>
+<style scoped>
   .tbl {
       background-color: #83A0C3;
       box-shadow: 1px 1px 50px #83A0C3;
   }
-  </style>
+</style>
   

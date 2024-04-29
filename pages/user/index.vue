@@ -26,9 +26,9 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">user</th>
-                      <th scope="col">Waktu</th>
-                      <th scope="col">Aktivitas</th>
+                      <th scope="col">username</th>
+                      <th scope="col">tipe user</th>
+                      <th scope="col">email</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -37,30 +37,6 @@
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td >Larry the Bird</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td >Larry the Bird</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
                     </tr>
                   </tbody>
                 </table>

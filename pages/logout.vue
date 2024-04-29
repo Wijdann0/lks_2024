@@ -17,10 +17,9 @@ async function insertLog(){
     const {error} = await supa
     .from('Tbl_LogActivity')
     .insert([{
-        Aktivitas: 'Logout',
+        aktivitas: 'Logout',
         username: user.value.user_metadata.username,
-        nama: user.value.user_metadata.username,
-        tipe_user: user.value.user_metadata.tipe_user,
+        tipe_user: user.value.user_metadata.tipe,
     }])
     if(!error) keluar()
 }
